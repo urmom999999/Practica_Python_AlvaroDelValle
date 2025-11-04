@@ -86,7 +86,7 @@ class Producto(object):
 test=Producto("Silla",4,200)
 #5.4
 total= test.calcular_total()
-print(total)
+print(f"Total del calculo: {total}")
 #5.5
 aumento =input("Cantidad a aumentar: ")
 resultadoAumento=test.aumentar_total(aumento)
@@ -97,6 +97,5 @@ reduccion =input("Cantidad a reducir: ")
 resultadoDisminucion=test.disminuir_total(reduccion)
 print(resultadoDisminucion)
 print(f"Comprobación: {test.cantidad}")
-
 
 # 6
