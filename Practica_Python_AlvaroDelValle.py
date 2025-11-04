@@ -108,6 +108,8 @@ print(resultadoDisminucion)
 print(f"Comprobación: {test.cantidad}")
 """
 # 6
+"""
+# 6.1 6.2
 import ast
 #ast modulo para pasar el txt a una lista
 f=open("empleados.txt")
@@ -120,4 +122,31 @@ empleados=e.read()
 nombrestest=ast.literal_eval(empleados)
 for empleado in nombrestest:
     print(empleado)
+"""
+# 6.3
+productoscsv=open("productos.csv")
+#mostrar el contenido del csv directamente
+print(productoscsv.read())
+#print(open("productos.csv").read())
+
+import csv
+
+class Producto(object):
+    def __init__(self,nombre,precio,cantidad):
+        #declarar tipo de dato
+        self.nombre=nombre
+        self.precio=float(precio)
+        self.cantidad=int(cantidad)
+
     
+# def leerCsv():
+
+datoscsv=open("productos.csv","r")
+reader=csv.reader(datoscsv)
+next(reader)
+productos=[Producto(nombre,precio,cantidad)
+for nombre,precio,cantidad in reader]
+#mostrar recorriendo el array
+print("Mostrando los productos en la lsita de objetos csv")
+for producto in productos:
+    print(f"Nombre: {producto.nombre} Precio: {producto.precio} Cantidad: {producto.cantidad}")
