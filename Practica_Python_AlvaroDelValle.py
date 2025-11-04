@@ -1,11 +1,14 @@
-# python primer_python.py 
+# python .\Practica_Python_AlvaroDelValle.py
 """ """
-"""
+
 # 1
+"""
 nombre_empresa = "TechSolutions"
 ano_fundacion = 2010
 print(f"{nombre_empresa} {ano_fundacion}")
-
+"""
+#2
+"""
 # 2.1
 
 numero=input("Escriba un numero:")
@@ -24,7 +27,9 @@ else:
 numeros ={1,2,3,4,5,6,7,8,9,10}
 for numero in numeros:
     print(numero)
-
+    """
+# 3
+"""
 # 3.1
 def calcular_iva(precioBase):
     precioBase=int(precioBase)
@@ -33,10 +38,12 @@ def calcular_iva(precioBase):
 
 precioBase= input("Escrib el precio a sumar el iva: ")
 calcular_iva(precioBase)
-"""
+
 # 3.2
-"""Escrib el precio a sumar el iva: 100
-Nuevo precio: 121.0"""
+Escrib el precio a sumar el iva: 100
+Nuevo precio: 121.0
+"""
+# 4
 """
 # 4.1
 empleados=["Ana", "Carlos", "María","Luis"]
@@ -54,6 +61,8 @@ print(info_empleado)
 print(info_empleado["nombre"])
 # 4.4
 print(info_empleado["departamento"])
+"""
+# 5
 """
 # 5.1
 class Producto(object):
@@ -97,5 +106,18 @@ reduccion =input("Cantidad a reducir: ")
 resultadoDisminucion=test.disminuir_total(reduccion)
 print(resultadoDisminucion)
 print(f"Comprobación: {test.cantidad}")
-
+"""
 # 6
+import ast
+#ast modulo para pasar el txt a una lista
+f=open("empleados.txt")
+print(f.read())
+#María sin í si no "MarÃ­a"
+#test extra para pasarlo a array
+e=open("empleados.txt","r")
+# "r" para indicar read, lectura, si no se indica no funciona
+empleados=e.read()
+nombrestest=ast.literal_eval(empleados)
+for empleado in nombrestest:
+    print(empleado)
+    
