@@ -140,13 +140,11 @@ class Producto(object):
 
     
 # def leerCsv():
-
 datoscsv=open("productos.csv","r")
 reader=csv.reader(datoscsv)
-next(reader)
 productos=[Producto(nombre,precio,cantidad)
 for nombre,precio,cantidad in reader]
 #mostrar recorriendo el array
-print("Mostrando los productos en la lsita de objetos csv")
+print("Mostrando los productos en la lsita de objetos csv:")
 for producto in productos:
     print(f"Nombre: {producto.nombre} Precio: {producto.precio} Cantidad: {producto.cantidad}")
